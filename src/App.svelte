@@ -1,30 +1,38 @@
 <script>
-	export let name;
+  import Menu from "./components/Menu.svelte";
 </script>
 
+<svelte:head><title>Menu</title></svelte:head>
+
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+  <Menu>
+    <ul>
+      <li><a href="/">Item 1</a></li>
+      <li><a href="/">Item 2</a></li>
+      <li><a href="/">Item 3</a></li>
+      <li><a href="/">Item 4</a></li>
+    </ul>
+  </Menu>
+
+  <p>Lorem ipsum.</p>
 </main>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+  }
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+  li {
+    flex: 0 0 auto;
+    outline: solid 1px red;
+  }
+  a {
+    display: block;
+    padding: 2px 4px;
+    text-decoration: none;
+    color: inherit;
+  }
 </style>
